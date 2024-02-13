@@ -1,43 +1,83 @@
-# base Class of your App inherits from the App class.
-from kivy.app import App
-# GridLayout arranges children in a matrix.
-from kivy.uix.gridlayout import GridLayout
-# Label is used to label something
-from kivy.uix.label import Label
-# used to take input from users
-from kivy.uix.textinput import TextInput
- 
- 
-class LoginScreen(GridLayout):
-    def __init__(self, **var_args):
- 
-        super(LoginScreen, self).__init__(**var_args)
-        # super function can be used to gain access
-        # to inherited methods from a parent or sibling class
-        # that has been overwritten in a class object.
-        self.cols = 2     # You can change it accordingly
-        self.add_widget(Label(text='User Name'))
-        self.username = TextInput(multiline=True)
- 
-        # multiline is used to take
-        # multiline input if it is true
-        self.add_widget(self.username)
-        self.add_widget(Label(text='password'))
-        self.password = TextInput(password=True, multiline=False)
- 
-        # password true is used to hide it
-        # by * self.add_widget(self.password)
-        self.add_widget(Label(text='Comfirm password'))
-        self.password = TextInput(password=True, multiline=False)
-        self.add_widget(self.password)
- 
- 
-# the Base Class of our Kivy App
-class MyApp(App):
+from kivymd.app import MDApp
+from kivy.lang.builder import Builder
+from kivy.uix.screenmanager import Screen, ScreenManager
+import wikipedia
+import threading
+
+Builder_string = '''
+ScreenManager:
+    Main:
+<Main>:
+    name : 'Wikipedia App'
+
+    BoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: 'Wikipedia App'
+            md_bg_color: app.theme_cls.primary_color
+            specific_text_color: 1, 1, 1, 1
+
+        MDTextField:
+            id: your_query
+            hint_text: "Your Query"
+            color_mode: 'custom'
+            helper_text_mode: "on_focus"
+
+        MDTextField:
+            id: result
+            hint_text: "Result"
+            multiline:"True"
+            icon_right_color: app.theme_cls.primary_color
+            readonly : "True"
+            color_mode: 'custom'
+            helper_text_mode: "on_focus"
+            icon_right: 'wikipedia'
+
+        MDRectangleFlatIconButton:
+            text: "Search"
+            icon: "cloud-search"
+            line_color: 0, 0, 0, 0
+            pos_hint: {"center_x": .5, "center_y": .6}
+            on_press: app.run_fun()
+
+        MDLabel:
+            pos_hint: {'center_y':0.85}
+            color:'#1675f7'
+
+        MDSpinner:
+            id: rc_spin
+            size_hint: None, None
+            size: dp(46), dp(46)
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            active: False
+    '''
+
+
+class Main(Screen):
+    pass
+
+
+sm = ScreenManager()
+sm.add_widget(Main(name='Wiki_App'))
+
+
+class MainApp(MDApp):
     def build(self):
-        # return a LoginScreen() as a root widget
-        return LoginScreen()
- 
- 
-if __name__ == '__main__':
-    MyApp().run()
+        self.help_string = Builder.load_string(Builder_string)
+        self.title = 'Wikipedia App'
+        return self.help_string
+
+    def run_fun(self):
+        t1 = threading.Thread(target=self.search)
+        t1.start()
+
+    def search(self):
+        self.help_string.get_screen('Wikipedia App').ids.rc_spin.active = True
+        query = self.help_string.get_screen('Wikipedia App').ids.your_query.text
+        result = wikipedia.summary(query, sentences=6)
+        result = result.strip()
+        self.help_string.get_screen('Wikipedia App').ids.result.text = result
+        self.help_string.get_screen('Wikipedia App').ids.rc_spin.active = False
+
+MainApp().run()
