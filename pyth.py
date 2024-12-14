@@ -1,7 +1,7 @@
 import math
 print("hsdkfh")
 
-class Myc();
+class Myc():
     def __init__(self,name ,date,moth):
         self.name = name
         self.date = date 
