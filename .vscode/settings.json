@@ -1,5 +1,6 @@
 {
     "python.analysis.completeFunctionParens": true,
+    "editor.autoClosingBrackets": "always",
     "python.analysis.autoImportCompletions": true,
     
 }
