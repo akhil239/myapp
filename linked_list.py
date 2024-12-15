@@ -5,16 +5,18 @@ class Node():
     def __init__(self,data):
         self.data = data
         self.next = None
+class D_node():
+    def __init__(self,data):
+        self.data = data
+        self.perent = None
+        self.next = None
 class algo():
-    
     null = None
     def add_element_at_null(self,data):
         if algo.null is None:
             algo.null = Node(data)
-        elif algo.null.next is None:
-            algo.null.next = Node(data)
         else:
-            current_node = algo.nul
+            current_node = algo.null
             while current_node.next is not None:
                 current_node = current_node.next
             else:
@@ -22,31 +24,21 @@ class algo():
     def print_linked_list(self):
         current_node = algo.null
         while current_node is not None:
-            print(current_node.data)
+            print(current_node.data,end = "<-")
             current_node = current_node.next
         
 instance = algo()
 instance.add_element_at_null(5)
+instance.add_element_at_null(10)
+instance.add_element_at_null(1006)
+instance.add_element_at_null(1006)
+instance.add_element_at_null(15600)
+instance.add_element_at_null(105740)
+instance.add_element_at_null(106440)
+instance.add_element_at_null(1040)
 instance.print_linked_list()
 
-null = None
-def linked_list(data):
-    global null,Node
-    current_node = null
-    if null is None:
-        null = Node(data)
-        return
-    elif null.next is None:
-        null.next = Node(data)
-        return
-    else:
-        if current_node is not None:
-            current_node = current_node.next
-        else:
-            linked_list(data)
-linked_list(6)
-linked_list(66)
-linked_list(666)
+
 
 
 
