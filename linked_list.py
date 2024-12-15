@@ -1,6 +1,9 @@
+from platform import node
+
+
 class Node():
     def __init__(self,data):
-        self.date = data
+        self.data = data
         self.next = None
 class algo():
     
@@ -11,7 +14,7 @@ class algo():
         elif algo.null.next is None:
             algo.null.next = Node(data)
         else:
-            current_node = algo.null
+            current_node = algo.nul
             while current_node.next is not None:
                 current_node = current_node.next
             else:
@@ -25,6 +28,25 @@ class algo():
 instance = algo()
 instance.add_element_at_null(5)
 instance.print_linked_list()
+
+null = None
+def linked_list(data):
+    global null,Node
+    current_node = null
+    if null is None:
+        null = Node(data)
+        return
+    elif null.next is None:
+        null.next = Node(data)
+        return
+    else:
+        if current_node is not None:
+            current_node = current_node.next
+        else:
+            linked_list(data)
+linked_list(6)
+linked_list(66)
+linked_list(666)
 
 
 
