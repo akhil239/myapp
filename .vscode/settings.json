@@ -3,5 +3,5 @@
     "editor.autoClosingBrackets": "always",
     "python.analysis.autoImportCompletions": true,
     "editor.codeLensFontSize": 0,
-    
+   
 }

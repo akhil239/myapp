@@ -11,3 +11,8 @@ class Myc():
         print(self.name)
 intance = Myc('akhil','22','7')
 intance.my_mthod()        
+test = None
+while test is not None:
+    print('test is not none')
+else:
+    print('test is none')
