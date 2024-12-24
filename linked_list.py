@@ -12,6 +12,9 @@ class D_node():
         self.next = None
 class algo():
     null = None
+    def __init__(self,name):
+        self.name = name
+        self.read()
     def add_element_at_null(self,data):
         if algo.null is None:
             algo.null = Node(data)
@@ -26,8 +29,9 @@ class algo():
         while current_node is not None:
             print(current_node.data,end = "<-")
             current_node = current_node.next
-        
-instance = algo()
+    def read(self):
+        print("call from __init_")
+instance = algo(8)
 instance.add_element_at_null(5)
 instance.add_element_at_null(10)
 instance.add_element_at_null(1006)
