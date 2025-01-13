@@ -6,5 +6,8 @@ int main(){
 }
 
 int add_node(int data){
-    
+
+}
+void traverse(){
+
 }
