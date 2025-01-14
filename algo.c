@@ -22,7 +22,9 @@ int main(){
     traverse();
     return 0;
 }
-
+int del_node_pos(){
+    
+}
 int add_node(int data){
     if(ptr == NULL){
         ptr = (struct Node *)malloc(sizeof(struct Node));
