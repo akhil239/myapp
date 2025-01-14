@@ -30,13 +30,7 @@ int del_node_pos(int *pos){
     int count = 0 ;
     struct Node *current = ptr;
     struct Node *current_next_next = current->next->next;
-    if(pos == -1){
-            struct Node current_next = current->next;
-            free(ptr);
-            ptr = current_next;
-            return 0;
-        }
-    while(count != &pos-1){
+    while(count != pos-1){
         current = current->next;
         count += 1;
     }
