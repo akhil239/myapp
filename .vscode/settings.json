@@ -2,5 +2,5 @@
     "python.analysis.completeFunctionParens": true,
     "editor.autoClosingBrackets": "always",
     "python.analysis.autoImportCompletions": true,
-    "editor.codeLensFontSize": 0, s
+    "editor.codeLensFontSize": 0, 
 }
