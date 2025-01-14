@@ -29,19 +29,21 @@ int main(){
 int del_node_pos(int pos){
     int count = 0 ;
     struct Node *current = ptr;
-    struct Node *current_next = current->next->next;
+    struct Node *current_next_next = current->next->next;
     while(count != pos-1){
         if(pos == -1){
-            
+            struct Node current_next = current->next;
+            free(ptr);
+            ptr = current_next;
         }
         current = current->next;
         count += 1;
     }
     free(current->next);
-    current->next = current_next;
+    current->next = current_next_next;
     printf("node deleted at %d",pos);
 //     printf("we are at %d",current->data);
-//     printf("we are at %d",current_next->data);
+//     printf("we are at %d",current_next_next->data);
 }
 int add_node(int data){
     if(ptr == NULL){
