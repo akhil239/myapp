@@ -10,6 +10,7 @@ struct Node
 };
 int add_node(int data);
 void traverse();
+int del_node_pos();
 struct Node *ptr = NULL;
 
 int main(){
@@ -18,12 +19,19 @@ int main(){
     add_node(570);
     add_node(545);
     add_node(5370);
+    del_node_pos(1);
     printf("%d",ptr->data);
     traverse();
     return 0;
 }
-int del_node_pos(){
-    
+int del_node_pos(int pos){
+    int count = 0 ;
+    struct Node *current = ptr;
+    while(count != pos){
+        current = current->next;
+        count += 1;
+    }
+    printf("we are at %d",count);
 }
 int add_node(int data){
     if(ptr == NULL){
