@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 struct Node
 {   int data;
     struct Node *next;
@@ -18,6 +19,7 @@ int add_node(int data){
     if(ptr == NULL){
         ptr = (struct Node *)malloc(sizeof(struct Node));
         ptr->data = data;
+        ptr->next = NULL;
         printf("new as created sccuessfully...");
     }
 
