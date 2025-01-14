@@ -9,5 +9,6 @@ int add_node(int data){
 
 }
 void traverse(){
+    
 
 }
