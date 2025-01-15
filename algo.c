@@ -41,9 +41,10 @@ int add_node_at_pos(int pos,int data){
         current = current->next;
         count += 1;
     }
-    struct Node *currrent_next_next = current->next->next;
-    free(current->next);
-    current->next = currrent_next_next;
+    struct Node *current_next = current->next;
+    current->next = (struct Node *)malloc(sizeof(struct Node));
+    current->next->data = data;
+    current->next->next = current_next;
 
 }
 int del_node_pos(int pos){
