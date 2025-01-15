@@ -24,7 +24,7 @@ int main(){
     add_node(545);
     add_node(5370);
     traverse();
-    length();
+    printf("length of the list: %d\n",length());
 
     return 0;
 }
