@@ -12,6 +12,7 @@ int add_node(int data);
 void traverse();
 int del_node_pos(int pos);
 int add_node_at_pos(int pos,int data);
+int del_node_with_value(int value);
 struct Node *ptr = NULL;
 
 
@@ -25,11 +26,19 @@ int main(){
     int value = 0;
     //del_node_pos(value-1);
     add_node_at_pos(1,999);
+    del_node_with_value(500);
     traverse();
     return 0;
 }
 int del_node_with_value(int value){
-    struct Node *
+    struct Node *current = ptr;
+    while(current->next->data != value){
+        current = current->next;
+    }
+    struct Node *temp = current->next->next;
+    free(current->next);
+    current->next = temp;
+
 }
 int add_node_at_pos(int pos,int data){
     int count = 0;
