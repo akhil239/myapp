@@ -24,7 +24,7 @@ int main(){
     //printf("%d",ptr->data);
     int value = 0;
     //del_node_pos(value-1);
-    add_node_at_pos(1);
+    add_node_at_pos(1,999);
     traverse();
     return 0;
 }
@@ -44,8 +44,8 @@ int add_node_at_pos(int pos,int data){
     }
     struct Node *current_next = current->next;
     current->next = (struct Node *)malloc(sizeof(struct Node));
-    current->next->data = data;
-    current->next->next = current_next;
+    current->data = data;
+    current->next = current_next;
 
 }
 int del_node_pos(int pos){
