@@ -11,6 +11,7 @@ struct Node
 int add_node(int data);
 void traverse();
 int del_node_pos(int pos);
+int add_node_with_pos(int pos);
 struct Node *ptr = NULL;
 
 
