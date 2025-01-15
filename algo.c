@@ -25,7 +25,7 @@ int main(){
     //printf("%d",ptr->data);
     int value = 0;
     //del_node_pos(value-1);
-    add_node_at_pos(1,999);
+    add_node_at_pos(1-1,999);
     traverse();
     del_node_with_value(545);
     return 0;
@@ -33,7 +33,12 @@ int main(){
 int del_node_with_value(int value){
     struct Node *current = ptr;
     while(current->next->data != value){
-        current = current->next;
+        if(current != NULL){
+            current = current->next;
+        }
+        else{
+            printf("element not found in the list please proved vailed input");
+        }
     }
     struct Node *temp = current->next->next;
     free(current->next);
@@ -56,8 +61,8 @@ int add_node_at_pos(int pos,int data){
     }
     struct Node *current_next = current->next;
     current->next = (struct Node *)malloc(sizeof(struct Node));
-    current->data = data;
-    current->next = current_next;
+    current->next->data = data;
+    current->next->next = current_next;
 
 }
 int del_node_pos(int pos){
