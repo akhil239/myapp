@@ -26,8 +26,8 @@ int main(){
     int value = 0;
     //del_node_pos(value-1);
     add_node_at_pos(1,999);
-    del_node_with_value(500);
     traverse();
+    del_node_with_value(545);
     return 0;
 }
 int del_node_with_value(int value){
