@@ -2,5 +2,10 @@
     "python.analysis.completeFunctionParens": true,
     "editor.autoClosingBrackets": "always",
     "python.analysis.autoImportCompletions": true,
-    "editor.codeLensFontSize": 0, 
+    "editor.codeLensFontSize": 0,
+    "C_Cpp.autocompleteAddParentheses": true, 
+    "editor.parameterHints.enabled": true,
+    "editor.tabCompletion": "on",
+
+
 }

@@ -25,8 +25,10 @@ int main(){
     add_node(5370);
     traverse();
     printf("length of the list: %d\n",length());
-
+    int data = 555;
+    printf("%d",data);
     return 0;
+
 }
 int del_node_with_value(int value){
     struct Node *current = ptr;
