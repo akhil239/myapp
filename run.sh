@@ -1,2 +1,2 @@
-gcc algo.c -o algo
-./algo
+gcc algoinjava.java -o algoinjava
+./algoinjava
