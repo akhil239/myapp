@@ -26,8 +26,9 @@ int main(){
     int value = 0;
     //del_node_pos(value-1);
     add_node_at_pos(1-1,999);
-    traverse();
+    //traverse();
     del_node_with_value(545);
+    traverse();
     return 0;
 }
 int del_node_with_value(int value){
@@ -43,6 +44,7 @@ int del_node_with_value(int value){
     struct Node *temp = current->next->next;
     free(current->next);
     current->next = temp;
+
 
 }
 int add_node_at_pos(int pos,int data){
