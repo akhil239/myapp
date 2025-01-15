@@ -23,7 +23,7 @@ int main(){
     //printf("%d",ptr->data);
     int value = 0;
     //del_node_pos(value-1);
-    add_node_at_pos(1)
+    add_node_at_pos(1);
     traverse();
     return 0;
 }
