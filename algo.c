@@ -11,7 +11,7 @@ struct Node
 int add_node(int data);
 void traverse();
 int del_node_pos(int pos);
-int add_node_with_pos(int pos);
+int add_node_at_pos(int pos,int data);
 struct Node *ptr = NULL;
 
 
@@ -27,6 +27,9 @@ int main(){
     add_node_at_pos(1,999);
     traverse();
     return 0;
+}
+int del_node_with_value(int value){
+    struct Node *
 }
 int add_node_at_pos(int pos,int data){
     int count = 0;
@@ -63,7 +66,7 @@ int del_node_pos(int pos){
     printf("%d",pos);
     free(current->next);
     current->next = current_next_next;
-    printf("node deleted at %d",&pos);
+    //printf("node deleted at %d",&pos);
 //     printf("we are at %d",current->data);
 //     printf("we are at %d",current_next_next->data);
 }
