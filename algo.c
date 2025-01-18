@@ -37,10 +37,11 @@ int del_node_with_value(int value){
     }
     if(current->data == value ){
         if(current->next != NULL){
-            free(current);
+            free(ptr);
         }
         else{
             struct Node *temp = current->next;
+            free(current->next);
             free(current);
             current= temp;
         }
