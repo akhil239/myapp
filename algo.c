@@ -18,7 +18,7 @@ struct Node *ptr = NULL;
 
 
 int main(){
-    // add_node(50);
+     add_node(50);
     // add_node(500);
     // add_node(570);
     // add_node(545);
