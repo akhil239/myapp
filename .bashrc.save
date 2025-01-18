@@ -1,0 +1,1 @@
+alias run="bash /workspaces/myapp/run.sh"

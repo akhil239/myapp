@@ -38,6 +38,7 @@ int del_node_with_value(int value){
         }
         else{
             printf("element not found in the list please proved vailed input");
+            return -1;
         }
     }
     struct Node *temp = current->next->next;
