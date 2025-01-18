@@ -32,6 +32,9 @@ int main(){
 }
 int del_node_with_value(int value){
     struct Node *current = ptr;
+    if(current == NULL){
+        printf("this list is ematy ")
+    }
     if(current->data == value ){
         if(current->next != NULL){
             free(current);
