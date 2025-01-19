@@ -19,11 +19,11 @@ struct Node *ptr = NULL;
 
 int main(){
      add_node(50);
-    // add_node(500);
-    // add_node(570);
-    // add_node(545);
+     add_node(500);
+     add_node(570);
+     add_node(545);
     // add_node(5370);
-    del_node_with_value(54587);
+    del_node_with_value(54);
     traverse();
     return 0;
 
@@ -31,29 +31,25 @@ int main(){
 int del_node_with_value(int value){
     struct Node *current = ptr;
     if(current == NULL){
-        printf("this list is ematy ");
-        return 1;
+        printf("this list is ematy.....");
+        return -1;
     }
-    if(current->data == value ){
-        if(current->next != NULL){
-            free(ptr);
+    if(current->data == value){
+        if(current->next == NULL){
+            free(current);
             return 0;
         }
         else{
-            current = current->next;
-            free(current);
+            ptr = current->next;
             return 0;
         }
     }
     while(current->next->data != value){
-        if(current != NULL){
-            current = current->next;
+        if(current->next->next == NULL){
+            printf("element not found in the list....");
             return 0;
         }
-        else{
-            printf("element not found in the list please proved vailed input");
-            return -1;
-        }
+        current = current->next;
     }
     struct Node *temp = current->next->next;
     free(current->next);
