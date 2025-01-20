@@ -9,7 +9,7 @@ struct Node
     /* data */
 };
 int add_node(int data);
-void traverse();
+int traverse();
 int del_node_pos(int pos);
 int add_node_at_pos(int pos,int data);
 int del_node_with_value(int value);
@@ -18,13 +18,13 @@ struct Node *ptr = NULL;
 
 
 int main(){
-     add_node(50);
-     add_node(500);
-     add_node(570);
-     add_node(545);
+    //  add_node(50);
+    //  add_node(500);
+    //  add_node(570);
+    //  add_node(545);
     // add_node(5370);
     //del_node_with_value();
-    add_node_at_pos(30,598);
+    // add_node_at_pos(30,598);
     traverse();
     return 0;
 
@@ -70,14 +70,19 @@ int length(){
 int add_node_at_pos(int pos,int data){
     int count = 0;
     struct Node *current = ptr;
+    if(ptr == NULL && pos == 0 || pos > 0){
+        ptr = (struct Node *)malloc(sizeof(struct Node));
+        ptr->data = data;
+        ptr->next = NULL;
+    }
     if(pos > length()-1){
         printf("the position yoy proveded is not vaild... but i will place this at last position.");
-        while(current != NULL){
+        while(current->next != NULL){
             current = current->next;
         }
-        current = (struct Node *)malloc(sizeof(struct Node));
-        current->data = data;
-        current->next = NULL;
+        current->next = (struct Node *)malloc(sizeof(struct Node));
+        current->next->data = data;
+        current->next->next = NULL;
         return -1;
     }
     if(pos == -1){
@@ -142,8 +147,12 @@ int add_node(int data){
     }
 
 }
-void traverse(){
+int traverse(){
     struct Node *current = ptr;
+    if(ptr == NULL){
+        printf("list is ematy ....");
+        return -1;
+    }
     while (current != NULL)
     {   printf("\n%d\n",current->data);
         current = current->next;
