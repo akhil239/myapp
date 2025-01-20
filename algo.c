@@ -74,6 +74,7 @@ int add_node_at_pos(int pos,int data){
         ptr = (struct Node *)malloc(sizeof(struct Node));
         ptr->data = data;
         ptr->next = NULL;
+        free(current);
         return 0;
     }
     if(pos > length()-1){
@@ -84,6 +85,7 @@ int add_node_at_pos(int pos,int data){
         current->next = (struct Node *)malloc(sizeof(struct Node));
         current->next->data = data;
         current->next->next = NULL;
+        free(current);
         return -1;
     }
     if(pos == -1){
@@ -91,6 +93,7 @@ int add_node_at_pos(int pos,int data){
         current = (struct Node *)malloc(sizeof(struct Node));
         current->data = data;
         current->next = temp;
+        free(current);
         return 0;
     }
     while (count != pos){
@@ -101,6 +104,7 @@ int add_node_at_pos(int pos,int data){
     current->next = (struct Node *)malloc(sizeof(struct Node));
     current->next->data = data;
     current->next->next = current_next;
+    free(current);
 
 }
 int del_node_pos(int pos){
