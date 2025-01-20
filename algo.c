@@ -24,7 +24,6 @@ int main(){
     add_node(3984);
     traverse();
     free(ptr);
-    
 
 }
 int del_node_with_value(int value){
@@ -51,8 +50,8 @@ int del_node_with_value(int value){
         current = current->next;
     }
     struct Node *temp = current->next->next;
-    free(current->next);
     current->next = temp;
+    return 0;
 }
 int length(){
     struct Node *temp = ptr;
