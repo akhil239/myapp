@@ -24,7 +24,7 @@ int main(){
     //  add_node(545);
     // add_node(5370);
     //del_node_with_value();
-    // add_node_at_pos(30,598);
+    add_node_at_pos(30,598);
     traverse();
     return 0;
 
@@ -74,6 +74,7 @@ int add_node_at_pos(int pos,int data){
         ptr = (struct Node *)malloc(sizeof(struct Node));
         ptr->data = data;
         ptr->next = NULL;
+        return 0;
     }
     if(pos > length()-1){
         printf("the position yoy proveded is not vaild... but i will place this at last position.");
