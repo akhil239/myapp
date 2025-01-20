@@ -16,6 +16,7 @@ int add_node_at_pos(int pos,int data);
 int del_node_with_value(int value);
 int length();
 int mid_node();
+void free_list();
 struct Node *ptr = NULL;
 
 
@@ -23,8 +24,19 @@ int main(){
     add_node(787);
     add_node(3984);
     traverse();
-    free(ptr);
+    free_list();
+    printf("%p",ptr);
 
+}
+void free_list(){
+    struct Node *current = ptr;
+    struct Node *next;
+    while(current != NULL){
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    ptr = NULL;
 }
 int del_node_with_value(int value){
     struct Node *current = ptr;
