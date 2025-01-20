@@ -8,25 +8,23 @@ struct Node
     struct Node *next;
     /* data */
 };
+
 int add_node(int data);
 int traverse();
 int del_node_pos(int pos);
 int add_node_at_pos(int pos,int data);
 int del_node_with_value(int value);
 int length();
+int mid_node();
 struct Node *ptr = NULL;
 
 
 int main(){
-    //  add_node(50);
-    //  add_node(500);
-    //  add_node(570);
-    //  add_node(545);
-    // add_node(5370);
-    //del_node_with_value();
-    add_node_at_pos(30,598);
+    add_node(787);
+    add_node(3984);
     traverse();
-    return 0;
+    free(ptr);
+    
 
 }
 int del_node_with_value(int value){
@@ -74,7 +72,6 @@ int add_node_at_pos(int pos,int data){
         ptr = (struct Node *)malloc(sizeof(struct Node));
         ptr->data = data;
         ptr->next = NULL;
-        free(current);
         return 0;
     }
     if(pos > length()-1){
@@ -85,15 +82,13 @@ int add_node_at_pos(int pos,int data){
         current->next = (struct Node *)malloc(sizeof(struct Node));
         current->next->data = data;
         current->next->next = NULL;
-        free(current);
-        return -1;
+        return 0;
     }
     if(pos == -1){
         struct Node *temp = current;
         current = (struct Node *)malloc(sizeof(struct Node));
         current->data = data;
         current->next = temp;
-        free(current);
         return 0;
     }
     while (count != pos){
@@ -104,8 +99,29 @@ int add_node_at_pos(int pos,int data){
     current->next = (struct Node *)malloc(sizeof(struct Node));
     current->next->data = data;
     current->next->next = current_next;
-    free(current);
-
+}
+int fisrt_node(){
+    struct Node *first = ptr;
+    return first->data;
+}
+int mid_node(){
+    int mid = (length()/2) -1;
+    struct Node *temp = ptr;
+    for(int i= 0;i < mid; i++){
+        if(temp->next != NULL){
+            temp = temp->next;
+        }
+    }
+    return temp->data;
+}
+int last_node(){
+    struct Node *last = ptr;
+    while (last->next != NULL)
+    {
+        last = last->next;
+        /* code */
+    }
+    return last->data;
 }
 int del_node_pos(int pos){
     int count = 0 ;
@@ -163,6 +179,4 @@ int traverse(){
         current = current->next;
         /* code */
     }
-    
-
 }
