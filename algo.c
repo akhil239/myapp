@@ -23,7 +23,8 @@ int main(){
      add_node(570);
      add_node(545);
     // add_node(5370);
-    del_node_with_value(54);
+    //del_node_with_value();
+    add_node_at_pos(30,598);
     traverse();
     return 0;
 
@@ -46,7 +47,7 @@ int del_node_with_value(int value){
     }
     while(current->next->data != value){
         if(current->next->next == NULL){
-            printf("element not found in the list....");
+            printf("\nelement not found in the list....\n");
             return 0;
         }
         current = current->next;
@@ -69,6 +70,16 @@ int length(){
 int add_node_at_pos(int pos,int data){
     int count = 0;
     struct Node *current = ptr;
+    if(pos > length()-1){
+        printf("the position yoy proveded is not vaild... but i will place this at last position.");
+        while(current != NULL){
+            current = current->next;
+        }
+        current = (struct Node *)malloc(sizeof(struct Node));
+        current->data = data;
+        current->next = NULL;
+        return -1;
+    }
     if(pos == -1){
         struct Node *temp = current;
         current = (struct Node *)malloc(sizeof(struct Node));
@@ -90,6 +101,14 @@ int del_node_pos(int pos){
     int count = 0 ;
     struct Node *current = ptr;
     struct Node *current_next_next = current->next->next;
+    if(pos > length()-1){
+        printf("position you proved is not vaild....");
+        return -1;
+    }
+    if(current == NULL){
+        printf("no element found in this list....");
+        return -1;
+    }
     if(pos == -1){
         ptr = current->next;
         return 0;
