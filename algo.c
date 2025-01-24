@@ -21,11 +21,20 @@ struct Node *ptr = NULL;
 
 
 int main(){
-    add_node(787);
-    add_node(3984);
-    traverse();
-    free_list();
-    printf("%p",ptr);
+    // add_node(787);
+    // add_node(3984);
+    // traverse();
+    // free_list();
+    // printf("%p",ptr);
+    char *arr[] = {"sldjsdjk",";sdifo;"};
+    for (int i = 0; i < 3; i++)
+    {
+        printf("\n%s",arr[i]);
+        /* code */
+    }
+
+    return 0;
+    
 
 }
 void free_list(){
