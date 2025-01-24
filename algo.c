@@ -27,7 +27,7 @@ int main(){
     // free_list();
     // printf("%p",ptr);
     char *arr[] = {"sldjsdjk",";sdifo;"};
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++)
     {
         printf("\n%s",arr[i]);
         /* code */
