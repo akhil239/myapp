@@ -7,6 +7,9 @@ void push(int value){
     top = top+= 1;
     stack[top] = value;
 }
+void pop(){
+    top = top-=1;
+}
 
 int main(){
     n = 5;
@@ -14,7 +17,10 @@ int main(){
     top = -1;
     push(5);
     push(89);
-    printf("%d",stack[0]);
-    printf("%d",stack[1]);
+    pop();
+    // printf("%d",top);
+    for(int i = 0;i <= top;i++){
+        printf("%d",stack[i]);
+    }
     return 0;
 }
