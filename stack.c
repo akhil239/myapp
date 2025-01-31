@@ -33,13 +33,17 @@ int main(){
     stack = (int *)malloc(n * sizeof(int)); //this points to dynamic array this array can hold upot 5 elements
     top = -1;//if we don't use negitve number we start from inserting element's from 1 so  that's way we negitive number 
     first = -1;
-    queuepush(5);//this will  add number; 5 to the stack
-    queuepush(89);// this will add number ; 8 to the stack
-    pop();// this will pop element from the stack by subtrating the top 
+    stack[top] = 5;
+    stack[top-1] = 500;
+    printf("%d",stack[-2]);
+    
+    // queuepush(5);//this will  add number; 5 to the stack
+    // queuepush(89);// this will add number ; 8 to the stack
+    // queuepop();// this will pop element from the stack by subtrating the top 
     // printf("%d",top);
     //this will prints element's persent in the stack
-    for(int i = n;i >= top;i--){
-        printf("%d",stack[i]);
-    }
+    // for(int i = n;i >= top;i--){
+    //     printf("%d\n",stack[i]);
+    // }
     return 0;
 }
