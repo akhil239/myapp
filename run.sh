@@ -1,4 +1,4 @@
-gcc algo.c -o algo
-./algo
-# javac algoinjava.java
-# java algoinjava
+gcc stack.c -o stack
+./stack
+# javac stackinjava.java
+# java stackinjava
