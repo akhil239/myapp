@@ -26,12 +26,10 @@ int main(){
     // traverse();
     // free_list();
     // printf("%p",ptr);
-    char *arr[] = {"sldjsdjk",";sdifo;"};
-    for (int i = 0; i < sizeof(arr)/sizeof(arr[0]); i++)
-    {
-        printf("\n%s",arr[i]);
-        /* code */
-    }
+    int *arr = (int *)malloc(sizeof(int));
+    arr[0] = 10;
+    arr[1] = 100;
+    printf("%d", arr[0]);
 
     return 0;
     
