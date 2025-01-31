@@ -5,8 +5,8 @@ int *stack; //globel stack pointer
 int top;//this show the top element in the stack 
 //this function add element to the stack
 void push(int value){
-    top = top+= 1;
-    stack[top] = value;
+    top = top+= 1;//this will increment top by 1 so that we can use this to track stack element's
+    stack[top] = value;//
 }
 //this function will remove element from stack
 void pop(){
