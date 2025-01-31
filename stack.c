@@ -27,6 +27,7 @@ int main(){
     push(5);//this will  add number; 5 to the stack
     push(89);// this will add number ; 8 to the stack
     pop();// this will pop element from the stack by subtrating the top 
+    push(897);
     // printf("%d",top);
     //this will prints element's persent in the stack
     for(int i = 0;i <= top;i++){
