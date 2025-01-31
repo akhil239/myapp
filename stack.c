@@ -10,12 +10,13 @@ void push(int value){
 }
 //this function will remove element from stack
 void pop(){
-    top = top-=1;
+    
+    top = top-=1;//this  
 }
 
 int main(){
-    n = 5;
-    stack = (int *)malloc(n * sizeof(int));
+    n = 5;//n = 5 length of this stack is 5
+    stack = (int *)malloc(n * sizeof(int)); //this points to dynamic array this array can hold upot 5 elements
     top = -1;
     push(5);
     push(89);
