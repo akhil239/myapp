@@ -12,7 +12,12 @@ void push(int value){
 void pop(){
     
     top = top-=1;//this  subtract 1 from top 
-    
+    /*when we subtract 1 from the top the will become top - 1 
+    for example stack have 5 element's
+    so the top we be 4 when we subract 1 from top will be 3
+    this will not going to remove that element from the stack but we are dicresing the stack 
+    by using this code so that we overwrite that element after dicrseing the stack 
+    we need to call push again this overwrite that element with new one*/
 }
 
 int main(){
