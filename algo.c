@@ -29,7 +29,7 @@ int main(){
     int *arr = (int *)malloc(sizeof(int));
     arr[0] = 10;
     arr[1] = 100;
-    printf("%p", &arr[0]);
+    printf("%p", &arr);
 
     return 0;
     
