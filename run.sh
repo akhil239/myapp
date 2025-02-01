@@ -1,4 +1,4 @@
-gcc stack.c -o stack
-./stack
-# javac stackinjava.java
-# java stackinjava
+gcc treewithstack.c -o treewithstack
+./treewithstack
+# javac treewithstackinjava.java
+# java treewithstackinjava
