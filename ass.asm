@@ -1,11 +1,15 @@
 section .data
-    hello db 'my dirst!',0      ; Null-terminated string
+    hello db 'my func',0      ; Null-terminated string
 
 section .text
-    global _start                    ; Entry point for the program
+    global _start   
+    ;global addnum                 ; Entry point for the program
 
 _start:
     ; Write "my asm!" to stdout
+    call addnum
+                             ; invoke syscall
+addnum:
     mov rax, 1                       ; syscall number for sys_write (1)
     mov rdi, 1                       ; file descriptor 1 is stdout
     mov rsi, hello                   ; address of the "Hello, World!" string
@@ -15,4 +19,4 @@ _start:
     ; Exit program
     mov rax, 60                      ; syscall number for sys_exit (60)
     xor rdi, rdi                     ; return code 0
-    syscall                          ; invoke syscall
+    syscall 
