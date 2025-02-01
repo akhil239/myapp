@@ -1,0 +1,1 @@
+nasm -f elf64 ass.s -o ass.o && ld ass.o -o ass && ./ass

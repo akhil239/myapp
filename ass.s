@@ -1,11 +1,11 @@
 section .data
-    hello db 'Hello, World!',0      ; Null-terminated string
+    hello db 'my dirst!',0      ; Null-terminated string
 
 section .text
     global _start                    ; Entry point for the program
 
 _start:
-    ; Write "Hello, World!" to stdout
+    ; Write "my asm!" to stdout
     mov rax, 1                       ; syscall number for sys_write (1)
     mov rdi, 1                       ; file descriptor 1 is stdout
     mov rsi, hello                   ; address of the "Hello, World!" string
