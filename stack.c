@@ -35,7 +35,9 @@ int main(){
     first = -1;
     stack[top] = 5;
     stack[top-1] = 500;
-    printf("%d",stack[-2]);
+    for(int i = -1; i >= -5;i--){
+        
+    }
     
     // queuepush(5);//this will  add number; 5 to the stack
     // queuepush(89);// this will add number ; 8 to the stack
