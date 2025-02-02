@@ -6,6 +6,8 @@
     "C_Cpp.autocompleteAddParentheses": true, 
     "editor.parameterHints.enabled": true,
     "editor.tabCompletion": "on",
-
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground":"#ad0000"
+    }
 
 }

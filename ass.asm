@@ -1,22 +1,44 @@
 section .data
-    hello db 'my func',0      ; Null-terminated string
+    msg db "The number is: ", 0
+
+section .bss
+    num resb 10           ; Reserve 10 bytes for the number string
 
 section .text
-    global _start   
-    ;global addnum                 ; Entry point for the program
+    global _start
 
 _start:
-    ; Write "my asm!" to stdout
-    call addnum
-                             ; invoke syscall
-addnum:
-    mov rax, 1                       ; syscall number for sys_write (1)
-    mov rdi, 1                       ; file descriptor 1 is stdout
-    mov rsi, hello                   ; address of the "Hello, World!" string
-    mov rdx, 13                      ; length of the string
-    syscall                          ; invoke syscall
+    ; The integer we want to print
+    mov rsi, 12345        ; The integer to print
 
-    ; Exit program
-    mov rax, 60                      ; syscall number for sys_exit (60)
-    xor rdi, rdi                     ; return code 0
-    syscall 
+    ; Convert integer to string
+    mov rbx, 10           ; Set divisor to 10 (decimal base)
+    mov rdi, num + 9      ; Set rdi to the last byte of the num buffer (reverse order)
+    mov byte [rdi], 0     ; Null-terminate the string
+convert:
+    dec rdi               ; Move to previous byte in buffer
+    xor rdx, rdx          ; Clear rdx (important for division)
+    div rbx               ; Divide rsi by 10, quotient in rsi, remainder (digit) in rdx
+    add dl, '0'           ; Convert remainder (digit) to ASCII ('0' -> 48 in ASCII)
+    mov [rdi], dl         ; Store ASCII character in the buffer
+    test rsi, rsi         ; Check if quotient is zero
+    jnz convert           ; If not, continue converting
+
+    ; Print "The number is: "
+    mov rax, 1            ; syscall number for sys_write
+    mov rdi, 1            ; file descriptor (stdout)
+    mov rsi, msg          ; pointer to the string
+    mov rdx, 15           ; length of the string
+    syscall
+
+    ; Print the number
+    mov rax, 1            ; syscall number for sys_write
+    mov rdi, 1            ; file descriptor (stdout)
+    mov rsi, num          ; pointer to the number string
+    mov rdx, 10           ; length of the string (max 10 digits)
+    syscall
+
+    ; Exit the program
+    mov rax, 60           ; syscall number for sys_exit
+    xor rdi, rdi          ; exit code 0
+    syscall
