@@ -1,0 +1,21 @@
+0x0000000000401002 in _start ()
+0x0000000000401004 in _start ()
+0x000000000040100b in _start ()
+0x0000000000401010 in _start ()
+0x0000000000401015 in _start ()
+0x000000000040101f in _start ()
+0x0000000000401024 in _start ()
+0x0000000000401026 in _start ()
+0x000000000040102b in _start ()
+0x000000000040102e in _start ()
+[Inferior 1 (process 3655) exited normally]
+Cannot access memory at address 0x401030
+Starting program: /workspaces/myapp/printinteger 
+
+Breakpoint 1, 0x0000000000401000 in _start ()
+0x0000000000401002 in _start ()
+Undefined command: "spepi".  Try "help".
+0x0000000000401004 in _start ()
+0x000000000040100b in _start ()
+0x0000000000401010 in _start ()
+0x0000000000401015 in _start ()
