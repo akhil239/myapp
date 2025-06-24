@@ -9,7 +9,10 @@ class Myc():
 
     def my_mthod(self):
         print(self.name)
-intance = Myc('akhil','22','7')
+
+class Linked_list():
+    pass
+intance = Myc()
 intance.my_mthod()        
 test = None
 while test is not None:
