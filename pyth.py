@@ -30,6 +30,9 @@ class Linked_list():
         self.root.next = current_node 
         del current_node
     def add_node_at_middle():
+        pass
+    def delete_list(self):
+        del self.root
         
     def add_node_at_last():
         pass
