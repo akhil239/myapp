@@ -45,7 +45,7 @@ class Linked_list():
         del self.root
         
     def add_node_at_last():
-        
+        pass
 
 obj = Linked_list()
 obj.add_linked_list(5)
