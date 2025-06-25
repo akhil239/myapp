@@ -57,10 +57,19 @@ class Linked_list():
             current_node = current_node.next 
         else:
             current_node.next = Node(data)
+    def remove_node(self,data):
+        current_node = self.root 
+        while current_node.data != data:
+            current_node = current_node.next 
+        else:
+            temp = current_node.next.next
+            current_node.next = temp
+
 
 obj = Linked_list()
 obj.add_linked_list(5)
 obj.add_linked_list(665)
 obj.add_node_at_front(55)
 obj.add_node_at_middle(5555)
+obj.remove_node(55)
 obj._print_list()
