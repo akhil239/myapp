@@ -29,16 +29,27 @@ class Linked_list():
         self.root = Node(data)
         self.root.next = current_node 
         del current_node
-    def add_node_at_middle():
-        pass
+    def add_node_at_middle(self,data):
+        middle = self._print_list()//2
+        current_node = self.root
+        count = 0
+        while count != middle:
+            current_node = current_node.next
+            count += 1
+        else:
+            temp = current_node.next 
+            current_node.next = Node(data)
+            current_node.next.next = temp
+            
     def delete_list(self):
         del self.root
         
     def add_node_at_last():
-        pass
+        
 
 obj = Linked_list()
 obj.add_linked_list(5)
 obj.add_linked_list(665)
 obj.add_node_at_front(55)
+obj.add_node_at_middle(5555)
 obj._print_list()
