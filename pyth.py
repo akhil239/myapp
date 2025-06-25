@@ -51,8 +51,12 @@ class Linked_list():
     def delete_list(self):
         del self.root
         
-    def add_node_at_last():
-        pass
+    def add_node_at_last(self,data):
+        current_node = self.root 
+        while current_node.next != None:
+            current_node = current_node.next 
+        else:
+            current_node.next = Node(data)
 
 obj = Linked_list()
 obj.add_linked_list(5)
