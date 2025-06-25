@@ -29,8 +29,15 @@ class Linked_list():
         self.root = Node(data)
         self.root.next = current_node 
         del current_node
+    def _length(self):
+        current_node = self.root 
+        count = 0
+        while current_node != None:
+            current_node = current_node.next 
+            count += 1
+        return count
     def add_node_at_middle(self,data):
-        middle = self._print_list()//2
+        middle = self._length()//2
         current_node = self.root
         count = 0
         while count != middle:
