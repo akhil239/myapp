@@ -84,7 +84,9 @@ class Linked_list():
                     temp = current_node.data
                     current_node2.data = current_node.data
                     current_node.data = temp
-                    
+                else:
+                    current_node2 = current_node2.next
+                
 
 
 obj = Linked_list()
@@ -92,5 +94,5 @@ obj.add_linked_list(5)
 obj.add_linked_list(665)
 obj.add_node_at_front(55)
 obj.add_node_at_middle(5555)
-obj.remove_node(55)
+obj.sort_list()
 obj._print_list()
