@@ -80,8 +80,11 @@ class Linked_list():
         while current_node != None:
             current_node2 = current_node.next
             while current_node2 != None:
-                if 
-        
+                if current_node2.data < current_node.data:
+                    temp = current_node.data
+                    current_node2.data = current_node.data
+                    current_node.data = temp
+                    
 
 
 obj = Linked_list()
