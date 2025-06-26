@@ -64,6 +64,13 @@ class Linked_list():
         else:
             temp = current_node.next.next
             current_node.next = temp
+    def node_with_pos(self,pos):
+        count = 0 
+        current_node = self.root
+        while count != pos:
+            
+    def sort_list():
+        pass
 
 
 obj = Linked_list()
