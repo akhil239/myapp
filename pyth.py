@@ -64,13 +64,24 @@ class Linked_list():
         else:
             temp = current_node.next.next
             current_node.next = temp
-    def node_with_pos(self,pos):
+    def node_with_pos(self,pos,data):
         count = 0 
         current_node = self.root
         while count != pos:
-            
-    def sort_list():
-        pass
+            current_node = current_node.next
+            count += 1
+        else:
+            temp = current_node.next
+            current_node.next = Node(data)
+            current_node.next.next = temp 
+            temp = None
+    def sort_list(self):
+        current_node = self.root 
+        while current_node != None:
+            current_node2 = current_node.next
+            while current_node2 != None:
+                if 
+        
 
 
 obj = Linked_list()
